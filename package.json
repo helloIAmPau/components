@@ -1,0 +1,29 @@
+{
+  "name": "@helloiampau/components",
+  "version": "0.0.0",
+  "description": "My favourite js webapp framework based on web-components",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint 'lib/**/*.js' 'test/**/*.test.js' && mocha",
+    "develop": "nodemon --watch lib/ --watch test/ --exec npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helloiampau/components.git"
+  },
+  "author": "Pasquale Boemio <boemianrapsodi@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/helloiampau/components/issues"
+  },
+  "homepage": "https://github.com/helloiampau/components#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.5",
+    "sandboxed-module": "^2.0.3",
+    "sinon": "^5.1.0",
+    "sinon-chai": "^3.1.0"
+  }
+}
