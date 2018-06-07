@@ -1,4 +1,4 @@
-﻿const { expect } = require('chai');
+const { expect } = require('chai');
 const sm = require('sandboxed-module');
 
 describe('The store module', function() {

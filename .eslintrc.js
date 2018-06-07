@@ -11,6 +11,7 @@ module.exports = {
     "sourceType": "module"
   },
   "rules": {
+    "unicode-bom": [ "error", "never" ],
     "indent": [ "error", 2 ],
     "linebreak-style": [ "error", "unix" ],
     "quotes": [ "error", "single" ],
