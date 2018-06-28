@@ -1,10 +1,9 @@
-const Elements = require('./lib/elements');
+const Element = require('./lib/element');
 const store = require('./lib/store');
 const render = require('./lib/render');
 
-const Components = Object.assign({
+module.exports = {
   store,
-  render
-}, Elements);
-
-module.exports = Components;
+  render,
+  Element
+};

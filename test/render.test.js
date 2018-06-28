@@ -10,39 +10,37 @@ chai.use(sinonChai);
 describe('The render module', function() {
 
   let mut;
-  let H;
-  let template;
   let root;
+  let template;
+  let id;
 
   beforeEach(function(done) {
+    template = sinon.spy();
+
     root = {};
 
-    template = sinon.stub();
-    template.returns('the template');
-
-    H = {
-      compile: sinon.stub()
+    id = {
+      patch: sinon.spy()
     };
-    H.compile.returns(template);
 
     mut = sm.require('../lib/render', {
       requires: {
-        'handlebars': H
+        'incremental-dom': id
       }
     });
 
     done();
   });
 
-  it('should build a render function', function(done) {
-    const someData = {};
+  it('should patch the dom using id', function(done) {
+    const data = {};
 
-    const render = mut(root, 'the html template');
-    expect(H.compile).to.be.calledWithExactly('the html template');
+    const render = mut(root, template);
+    render(data);
 
-    render(someData);
-    expect(template).to.be.calledWithExactly(someData);
-    expect(root.innerHTML).to.be.equal('the template');
+    expect(id.patch).to.be.calledWith(root);
+    id.patch.getCall(0).args[1]();
+    expect(template).to.be.calledWithExactly(data);
 
     done();
   });
