@@ -1,9 +1,9 @@
 const Element = require('./lib/element');
-const store = require('./lib/store');
+const stores = require('./lib/stores');
 const render = require('./lib/render');
 
 module.exports = {
-  store,
+  stores,
   render,
   Element
 };
