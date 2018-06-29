@@ -17,7 +17,7 @@ describe('The render module', function() {
   beforeEach(function(done) {
     template = sinon.spy();
 
-    root = {};
+    root = { root: 'element' };
 
     id = {
       patch: sinon.spy()
@@ -33,14 +33,12 @@ describe('The render module', function() {
   });
 
   it('should patch the dom using id', function(done) {
-    const data = {};
-
     const render = mut(root, template);
-    render(data);
+    render();
 
     expect(id.patch).to.be.calledWith(root);
     id.patch.getCall(0).args[1]();
-    expect(template).to.be.calledWithExactly(data);
+    expect(template).to.be.calledWithExactly(root);
 
     done();
   });
