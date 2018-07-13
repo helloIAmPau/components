@@ -1,6 +1,6 @@
 {
   "name": "@helloiampau/components",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "My favourite js webapp framework based on web-components",
   "main": "index.js",
   "scripts": {
