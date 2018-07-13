@@ -20,8 +20,7 @@ describe('The render module', function() {
     root = { root: 'element' };
 
     id = {
-      patch: sinon.spy(),
-      skip: sinon.spy()
+      patch: sinon.spy()
     };
 
     mut = sm.require('../lib/render', {
@@ -40,16 +39,6 @@ describe('The render module', function() {
     expect(id.patch).to.be.calledWith(root);
     id.patch.getCall(0).args[1]();
     expect(template).to.be.calledWithExactly(root);
-
-    done();
-  });
-
-  it('should call the skip function (see issue incremental-dom#182)', function(done) {
-    const render = mut(root, template);
-    render();
-    id.patch.getCall(0).args[1]();
-
-    expect(id.skip).to.be.calledAfter(template);
 
     done();
   });
