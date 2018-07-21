@@ -23,7 +23,7 @@ describe('The render module', function() {
       patch: sinon.spy()
     };
 
-    mut = sm.require('../lib/render', {
+    mut = sm.require('../src/render', {
       requires: {
         'incremental-dom': id
       }

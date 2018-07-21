@@ -6,7 +6,7 @@ describe('The store module', function() {
   let mut;
 
   beforeEach(function(done) {
-    mut = sm.require('../lib/stores');
+    mut = sm.require('../src/stores');
 
     done();
   });

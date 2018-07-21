@@ -9,7 +9,7 @@ describe('The custom HTML element', function() {
   beforeEach(function(done) {
     HTMLElement = function() {};
 
-    mut = sm.require('../lib/element', {
+    mut = sm.require('../src/element', {
       globals: {
         HTMLElement
       }
